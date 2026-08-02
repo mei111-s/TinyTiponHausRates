@@ -31,15 +31,10 @@
     align-items:center;
     gap:14px;
   }
-  .logo-box.small{
-    width:44px;height:44px;
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
-  .logo-box.small span{
-    font-family:'Jost', sans-serif;
-    font-weight:800;
-    font-size:20px;
+  .logo-img.nav{
+    height:40px;
+    width:auto;
+    display:block;
   }
   .sitenav-brandtext{
     font-weight:800;
@@ -76,6 +71,7 @@
     font-size:52px;
     letter-spacing:0.5px;
     color:var(--teal);
+    text-align:center;
   }
 
   .page{
@@ -239,60 +235,6 @@
   ul.rate-list li b{
     font-weight:700;
   }
-
-  /* ---------- Editing ---------- */
-  [contenteditable="true"]{
-    outline:2px dashed transparent;
-    border-radius:3px;
-    transition:outline-color .15s ease, background .15s ease;
-  }
-  body.editing [contenteditable="true"]:hover{
-    outline-color:#9bb89f;
-    background:#f2f7f2;
-  }
-  body.editing [contenteditable="true"]:focus{
-    outline-color:var(--gold);
-    background:#fbf7ee;
-  }
-
-  .toolbar{
-    position:fixed;
-    bottom:22px;
-    right:22px;
-    display:flex;
-    gap:10px;
-    z-index:50;
-    font-family:'Jost',sans-serif;
-  }
-  .toolbar button{
-    border:none;
-    padding:12px 20px;
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:0.5px;
-    border-radius:30px;
-    cursor:pointer;
-    box-shadow:0 4px 14px rgba(0,0,0,0.18);
-  }
-  #editBtn{ background:var(--ink); color:#fff; }
-  #editBtn.active{ background:var(--red); }
-  #saveBtn{ background:var(--gold); color:#fff; display:none; }
-  #resetBtn{ background:#eee; color:#333; display:none; }
-  .toast{
-    position:fixed;
-    bottom:80px;
-    right:22px;
-    background:var(--ink);
-    color:#fff;
-    padding:10px 18px;
-    border-radius:6px;
-    font-size:13px;
-    opacity:0;
-    transform:translateY(6px);
-    transition:opacity .25s ease, transform .25s ease;
-    pointer-events:none;
-  }
-  .toast.show{ opacity:1; transform:translateY(0); }
 
   @media (max-width:900px){
     .page{padding:32px 20px 90px;}
