@@ -6,252 +6,27 @@
 <title>Tiny Haus & Tipon Haus — Rates</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --green:#2f4a34;
-    --gold:#a98b56;
-    --red:#c0223a;
-    --ink:#1c1c1c;
-    --paper:#ffffff;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:#f6f5f2;
-    font-family:'Jost', sans-serif;
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{
-    max-width:1200px;
-    margin:0 auto;
-    background:var(--paper);
-    padding:48px 56px 64px;
-  }
-
-  /* ---------- Header ---------- */
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:24px;
-    padding-bottom:28px;
-    margin-bottom:36px;
-    border-bottom:1px solid #eae7e0;
-    flex-wrap:wrap;
-  }
-  h1.title{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size:76px;
-    letter-spacing:2px;
-    margin:0;
-    line-height:1;
-  }
-  .brand{
-    display:flex;
-    align-items:flex-start;
-    gap:22px;
-  }
-  .logo-box{
-    width:78px;height:78px;
-    border:2.5px solid var(--ink);
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-    margin-top:2px;
-  }
-  .logo-box span{
-    font-family:'Playfair Display', serif;
-    font-weight:700;
-    font-size:34px;
-  }
-  .brand-name{
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:1px;
-    line-height:1.35;
-    margin-top:10px;
-    text-transform:uppercase;
-  }
-  .header-right{
-    text-align:right;
-    max-width:560px;
-  }
-  .tagline{
-    font-family:'Playfair Display', serif;
-    font-style:italic;
-    font-weight:600;
-    font-size:19px;
-    margin-bottom:8px;
-  }
-  .book-now{
-    color:var(--gold);
-    font-weight:700;
-    font-size:26px;
-    letter-spacing:6px;
-    margin:6px 0 10px;
-  }
-  .pm-label{
-    font-weight:700;
-    font-size:13px;
-    letter-spacing:3px;
-    margin-bottom:2px;
-  }
-  .pm-line{
-    font-weight:600;
-    font-size:14px;
-    letter-spacing:2px;
-    margin-bottom:2px;
-  }
-  .pm-email{
-    color:var(--gold);
-    font-weight:600;
-    font-size:13px;
-    letter-spacing:2px;
-  }
-
-  /* ---------- Layout ---------- */
-  .layout{
-    display:grid;
-    grid-template-columns:1fr 1.55fr;
-    gap:28px;
-  }
-  .photos{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-  }
-  .photos img{
-    width:100%;
-    display:block;
-    border-radius:4px;
-  }
-
-  .cards{
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-  }
-  .card{
-    border:1.5px solid var(--green);
-    padding:22px 26px 24px;
-    position:relative;
-  }
-  .card-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:16px;
-    margin-bottom:12px;
-  }
-  .card-title{
-    font-family:'Playfair Display', serif;
-    font-style:italic;
-    font-weight:600;
-    font-size:27px;
-    line-height:1.15;
-  }
-  .card-title .sub{
-    display:block;
-    font-family:'Jost',sans-serif;
-    font-style:normal;
-    font-weight:700;
-    font-size:14px;
-    letter-spacing:0.5px;
-    margin-top:2px;
-  }
-  .checktimes{
-    text-align:right;
-    color:var(--red);
-    font-weight:700;
-    font-size:13.5px;
-    letter-spacing:0.5px;
-    white-space:nowrap;
-    line-height:1.5;
-  }
-  .checktimes .divider{
-    border:none;
-    border-top:2px dashed var(--red);
-    width:70px;
-    margin:2px 0 2px auto;
-  }
-  ul.rate-list{
-    margin:0;
-    padding-left:20px;
-    font-size:15px;
-    line-height:1.55;
-  }
-  ul.rate-list li{
-    margin-bottom:6px;
-  }
-  ul.rate-list li b{
-    font-weight:700;
-  }
-
-  /* ---------- Editing ---------- */
-  [contenteditable="true"]{
-    outline:2px dashed transparent;
-    border-radius:3px;
-    transition:outline-color .15s ease, background .15s ease;
-  }
-  body.editing [contenteditable="true"]:hover{
-    outline-color:#9bb89f;
-    background:#f2f7f2;
-  }
-  body.editing [contenteditable="true"]:focus{
-    outline-color:var(--gold);
-    background:#fbf7ee;
-  }
-
-  .toolbar{
-    position:fixed;
-    bottom:22px;
-    right:22px;
-    display:flex;
-    gap:10px;
-    z-index:50;
-    font-family:'Jost',sans-serif;
-  }
-  .toolbar button{
-    border:none;
-    padding:12px 20px;
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:0.5px;
-    border-radius:30px;
-    cursor:pointer;
-    box-shadow:0 4px 14px rgba(0,0,0,0.18);
-  }
-  #editBtn{ background:var(--ink); color:#fff; }
-  #editBtn.active{ background:var(--red); }
-  #saveBtn{ background:var(--gold); color:#fff; display:none; }
-  #resetBtn{ background:#eee; color:#333; display:none; }
-  .toast{
-    position:fixed;
-    bottom:80px;
-    right:22px;
-    background:var(--ink);
-    color:#fff;
-    padding:10px 18px;
-    border-radius:6px;
-    font-size:13px;
-    opacity:0;
-    transform:translateY(6px);
-    transition:opacity .25s ease, transform .25s ease;
-    pointer-events:none;
-  }
-  .toast.show{ opacity:1; transform:translateY(0); }
-
-  @media (max-width:900px){
-    .page{padding:32px 20px 90px;}
-    header{flex-direction:column;}
-    .header-right{text-align:left;}
-    .layout{grid-template-columns:1fr;}
-    h1.title{font-size:56px;}
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav class="sitenav">
+  <div class="sitenav-brand">
+    <div class="logo-box small"><span>TH</span></div>
+    <div class="sitenav-brandtext" data-key="nav-brand">tinytiponhaus.com</div>
+  </div>
+  <ul class="sitenav-links">
+    <li data-key="nav-l1">PROMOS</li>
+    <li data-key="nav-l2">TINY HAUS GALLERY</li>
+    <li data-key="nav-l3">TIPON HAUS GALLERY</li>
+    <li class="current" data-key="nav-l4">RATES</li>
+    <li data-key="nav-l5">HOUSE RULES</li>
+    <li data-key="nav-l6">CONTACT US</li>
+  </ul>
+</nav>
+
+<h2 class="page-heading" data-key="pageheading">RATES</h2>
+
 <div class="page">
 
   <header>
@@ -357,83 +132,7 @@
 </div>
 <div class="toast" id="toast">Saved</div>
 
-<script>
-  const STORAGE_KEY = 'tinyhaus_rates_v1';
-  const editables = document.querySelectorAll('[data-key]');
-  const editBtn = document.getElementById('editBtn');
-  const saveBtn = document.getElementById('saveBtn');
-  const resetBtn = document.getElementById('resetBtn');
-  const toast = document.getElementById('toast');
-
-  // Load saved overrides on page load
-  function loadSaved(){
-    try{
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if(!raw) return;
-      const data = JSON.parse(raw);
-      editables.forEach(el=>{
-        const key = el.dataset.key;
-        if(data[key] !== undefined){
-          // only replace this node's own text, not nested elements (for card-title with .sub)
-          setOwnHTML(el, data[key]);
-        }
-      });
-    }catch(e){ console.warn('Could not load saved rates', e); }
-  }
-
-  function setOwnHTML(el, html){
-    // Preserve any child elements with data-key (nested), replace only direct text
-    const nested = Array.from(el.children).filter(c=>c.dataset && c.dataset.key);
-    el.innerHTML = html;
-    nested.forEach(n=>{
-      if(!el.querySelector(`[data-key="${n.dataset.key}"]`)){
-        el.appendChild(n);
-      }
-    });
-  }
-
-  function getOwnText(el){
-    // Text of element excluding nested data-key children
-    let clone = el.cloneNode(true);
-    clone.querySelectorAll('[data-key]').forEach(n=>n.remove());
-    return clone.innerHTML.trim();
-  }
-
-  function showToast(msg){
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(()=>toast.classList.remove('show'), 1800);
-  }
-
-  let editing = false;
-  editBtn.addEventListener('click', ()=>{
-    editing = !editing;
-    document.body.classList.toggle('editing', editing);
-    editables.forEach(el=>el.setAttribute('contenteditable', editing ? 'true' : 'false'));
-    editBtn.textContent = editing ? 'Stop editing' : 'Edit rates';
-    editBtn.classList.toggle('active', editing);
-    saveBtn.style.display = editing ? 'inline-block' : 'none';
-    resetBtn.style.display = editing ? 'inline-block' : 'none';
-  });
-
-  saveBtn.addEventListener('click', ()=>{
-    const data = {};
-    editables.forEach(el=>{
-      data[el.dataset.key] = getOwnText(el);
-    });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    showToast('Changes saved');
-  });
-
-  resetBtn.addEventListener('click', ()=>{
-    if(confirm('Reset all text back to the original rates? This clears your saved edits.')){
-      localStorage.removeItem(STORAGE_KEY);
-      location.reload();
-    }
-  });
-
-  loadSaved();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
